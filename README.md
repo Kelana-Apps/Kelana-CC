@@ -41,31 +41,21 @@ API ini dibuat menggunakan Flask untuk mengoptimalkan itinerary perjalanan, meng
 
 1. **Clone Repositori**
    ```bash
-   git clone https://github.com/username/repo-name.git
-   cd repo-name
+   git clone https://github.com/Kelana-Apps/Kelana-CC-ML-APIs.git
+   cd Kelana-CC-ML-APIs
    ```
 
-2. **Setup Lingkungan Virtual**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   venv\Scripts\activate   # Windows
-   ```
-
-3. **Install Dependencies**
+2. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Jalankan Aplikasi**
+3. **Jalankan Aplikasi**
    ```bash
-   export FLASK_APP=app  # Linux/Mac
-   set FLASK_APP=app     # Windows
-   flask run
+   gunicorn --bind  0.0.0.0:8080  app.main:app
    ```
-   Aplikasi akan berjalan di `http://127.0.0.1:5000`.
 
-5. **Uji API Menggunakan Postman**
+4. **Uji API Menggunakan Postman**
    - Endpoint: `POST /recommend`
    - Payload:
      ```json
@@ -81,32 +71,25 @@ API ini dibuat menggunakan Flask untuk mengoptimalkan itinerary perjalanan, meng
 
 ### **Langkah-langkah Deploy ke Google Cloud Run**
 
+1. **Clone Git Repository**
+   ```bash
+   git clone https://github.com/Kelana-Apps/Kelana-CC-ML-APIs.git
+   cd Kelana-CC-ML-APIs
+   ```
+   
 1. **Build Docker Image**
    ```bash
-   docker build -t itinerary-optimization-api .
+   docker build -t ml-api kelana .
    ```
 
 2. **Run Docker Secara Lokal (Opsional)**
    ```bash
-   docker run -p 8080:8080 itinerary-optimization-api
+   docker run -p 8080:8080 ml-api-kelana
    ```
-   Aplikasi dapat diakses di `http://127.0.0.1:8080`.
-
-3. **Tag dan Push Docker Image ke Google Container Registry (GCR)**
-   ```bash
-   docker tag itinerary-optimization-api gcr.io/<PROJECT_ID>/itinerary-optimization-api
-   docker push gcr.io/<PROJECT_ID>/itinerary-optimization-api
    ```
 
 4. **Deploy ke Cloud Run**
-   ```bash
-   gcloud run deploy itinerary-optimization-api \
-       --image gcr.io/<PROJECT_ID>/itinerary-optimization-api \
-       --platform managed \
-       --region <REGION> \
-       --allow-unauthenticated
-   ```
-   Replace `<PROJECT_ID>` dengan ID Proyek Google Cloud Anda dan `<REGION>` dengan wilayah Cloud Run (misalnya `us-west1`).
+   Deploy menggunakan GUI Cloud Run di GCP, menyambungkan langsung repository github dengan cloud run
 
 5. **Akses API**
    URL aplikasi akan ditampilkan setelah proses deployment selesai, misalnya:

@@ -69,9 +69,8 @@ This API is built using Flask to optimize travel itineraries by combining Collab
      ```
      ## **Response Example**
 
-Here is an example of the API response for the endpoint `POST /recommend`:
-
-```json
+- Here is an example of the API response for the endpoint `POST /recommend`:
+  ```json
 {
   "selected_places": [
     {

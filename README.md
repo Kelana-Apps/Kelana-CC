@@ -89,9 +89,11 @@ API ini dibuat menggunakan Flask untuk mengoptimalkan itinerary perjalanan, meng
    ```
 
 4. **Deploy ke Cloud Run**
+   ```bash
    Deploy menggunakan GUI Cloud Run di GCP, menyambungkan langsung repository github dengan cloud run
-
-5. **Akses API**
+   ```
+   ```
+6. **Akses API**
    URL aplikasi akan ditampilkan setelah proses deployment selesai, misalnya:
    ```
    https://ml-api-kelana-fixed-738667113944.asia-southeast2.run.app 

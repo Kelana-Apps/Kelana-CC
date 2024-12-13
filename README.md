@@ -67,10 +67,11 @@ This API is built using Flask to optimize travel itineraries by combining Collab
        "price_category": "Medium"
      }
      ```
-     ## **Response Example**
+5. **Response Example**
 
-- Here is an example of the API response for the endpoint `POST /recommend`:
-  ```json
+Here is an example of the API response for the endpoint `POST /recommend`:
+
+```json
 {
   "selected_places": [
     {
@@ -152,6 +153,8 @@ This API is built using Flask to optimize travel itineraries by combining Collab
   ]
 }
 ```
+
+
 
 
 ---

@@ -1,3 +1,4 @@
+
 # Kelana ML API
 
 This API is built using Flask to optimize travel itineraries by combining Collaborative-Based Filtering (CBF) and Traveling Salesman Problem (TSP) algorithms. The project also utilizes Docker for containerization and is deployed on Google Cloud Run.
@@ -5,18 +6,19 @@ This API is built using Flask to optimize travel itineraries by combining Collab
 ---
 
 ## **Features**
-1. Recommend tourist destinations based on location, price category, and time slots (morning, afternoon, evening).
-2. Optimize travel routes using TSP.
+1. Recommends tourist destinations based on location, price category, and time slots (morning, afternoon, evening).
+2. Optimizes travel routes using the Traveling Salesman Problem (TSP).
 3. Deployment using Docker and Google Cloud Run.
 
 ---
 
 ## **Folder Structure**
+```
 .
 ├── app
 │   ├── cbf.py             # File for Collaborative-Based Filtering
 │   ├── tsp.py             # File for Traveling Salesman Problem
-│   ├── main.py            # Flask API Endpoints
+│   ├── routes.py          # Flask API Endpoints
 │   ├── __init__.py        # Flask application initialization
 │   ├── model.h5           # Machine Learning Model (CBF)
 ├── dataset
@@ -24,6 +26,8 @@ This API is built using Flask to optimize travel itineraries by combining Collab
 ├── Dockerfile             # Dockerfile for containerization
 ├── requirements.txt       # Python dependencies
 ├── README.md              # Project documentation
+├── .dockerignore          # Files ignored by Docker
+```
 
 ---
 
@@ -36,35 +40,35 @@ This API is built using Flask to optimize travel itineraries by combining Collab
 
 ### **Steps to Run Locally**
 
-1. **Clone Repository**
-   \`\`\`bash
+1. **Clone the Repository**
+   ```bash
    git clone https://github.com/Kelana-Apps/Kelana-CC-ML-APIs.git
    cd Kelana-CC-ML-APIs
-   \`\`\`
+   ```
 
 2. **Install Dependencies**
-   \`\`\`bash
+   ```bash
    pip install -r requirements.txt
-   \`\`\`
+   ```
 
 3. **Run the Application**
-   \`\`\`bash
+   ```bash
    gunicorn --bind 0.0.0.0:8080 app.main:app
-   \`\`\`
+   ```
 
 4. **Test the API Using Postman**
-   - Endpoint: \`POST /recommend\`
+   - Endpoint: `POST /recommend`
    - Payload:
-   json
+     ```json
      {
        "city": "Jakarta",
        "start_date": "01-01-2024",
-       "end_date": "01-01-2024",
+       "end_date": "03-01-2024",
        "price_category": "Medium"
      }
-     
+     ```
    - Response:
-   json
+     ```json
      {
     "selected_places": [
         {
@@ -145,35 +149,35 @@ This API is built using Flask to optimize travel itineraries by combining Collab
         }
     ]
 }
-     
+     ```
 
 ---
 
 ### **Steps to Deploy on Google Cloud Run**
 
-1. **Clone Git Repository**
-   \`\`\`bash
+1. **Clone the Git Repository**
+   ```bash
    git clone https://github.com/Kelana-Apps/Kelana-CC-ML-APIs.git
    cd Kelana-CC-ML-APIs
-   \`\`\`
+   ```
 
-2. **Build Docker Image**
-   \`\`\`bash
+2. **Build the Docker Image**
+   ```bash
    docker build -t ml-api-kelana .
-   \`\`\`
+   ```
 
 3. **Run Docker Locally (Optional)**
-   \`\`\`bash
+   ```bash
    docker run -p 8080:8080 ml-api-kelana
-   \`\`\`
+   ```
 
 4. **Deploy to Cloud Run**
    Use the GCP Cloud Run GUI to deploy, linking the repository directly to Cloud Run.
 
 5. **Access the API**
    The application URL will be displayed after the deployment process is completed, e.g.,
-   \`\`\`
+   ```
    https://ml-api-kelana-fixed-738667113944.asia-southeast2.run.app
-   \`\`\`
+   ```
 
-EOF
+---

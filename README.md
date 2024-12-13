@@ -183,7 +183,7 @@ Here is an example of the API response for the endpoint `POST /recommend`:
 5. **Access the API**
    The application URL will be displayed after the deployment process is completed, e.g.,
    ```
-   https://ml-api-kelana-fixed-738667113944.asia-southeast2.run.app
+   https://ml-api.asia-southeast2.run.app
    ```
 
 ---

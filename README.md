@@ -147,8 +147,8 @@ This API is built using Flask to optimize travel itineraries by combining Collab
                 }
             }
         }
-    ]
-} ```
+    }
+}```
 
 ---
 

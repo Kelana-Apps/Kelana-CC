@@ -12,7 +12,6 @@ This API is built using Flask to optimize travel itineraries by combining Collab
 ---
 
 ## **Folder Structure**
-\`\`\`
 .
 ├── app
 │   ├── cbf.py             # File for Collaborative-Based Filtering
@@ -25,7 +24,6 @@ This API is built using Flask to optimize travel itineraries by combining Collab
 ├── Dockerfile             # Dockerfile for containerization
 ├── requirements.txt       # Python dependencies
 ├── README.md              # Project documentation
-\`\`\`
 
 ---
 
@@ -57,17 +55,16 @@ This API is built using Flask to optimize travel itineraries by combining Collab
 4. **Test the API Using Postman**
    - Endpoint: \`POST /recommend\`
    - Payload:
-     \`\`\`json
+   json
      {
        "city": "Jakarta",
        "start_date": "01-01-2024",
        "end_date": "01-01-2024",
        "price_category": "Medium"
      }
-     \`\`\`
      
    - Response:
-     \`\`\`json
+   json
      {
     "selected_places": [
         {
@@ -148,7 +145,6 @@ This API is built using Flask to optimize travel itineraries by combining Collab
         }
     ]
 }
-     \`\`\`
      
 
 ---

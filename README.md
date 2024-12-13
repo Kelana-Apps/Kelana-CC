@@ -92,7 +92,7 @@ API ini dibuat menggunakan Flask untuk mengoptimalkan itinerary perjalanan, meng
    ```bash
    Deploy menggunakan GUI Cloud Run di GCP, menyambungkan langsung repository github dengan cloud run
    ```
-   ```
+   
 6. **Akses API**
    URL aplikasi akan ditampilkan setelah proses deployment selesai, misalnya:
    ```
